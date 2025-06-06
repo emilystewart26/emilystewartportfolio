@@ -1,461 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  
+<head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
+    <title>Emily Stewart - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   
-  <body>
-   <!-- Navbar -->
-    <nav id="desktop-nav">
-      <div class="logo">Emily Stewart</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+  <body class="bg-white text-gray-900 font-sans">
+   
+   
+    <nav id="desktop-nav" class="relative flex justify-between items-center px-6 py-4 bg-white shadow-md">
+  <div class="logo text-2xl font-bold text-black cursor-default">
+    Emily Stewart
+  </div>
 
-    <!-- Hamburger -->
-    <nav id="hamburger-nav">
-        <div class="logo">Emily Stewart</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
+  <!-- Desktop nav links -->
+  <ul class="nav-links hidden md:flex space-x-8 text-gray-700 font-medium">
+    <li><a href="#about" class="hover:text-black transition">About</a></li>
+    <li><a href="#experience" class="hover:text-black transition">Experience</a></li>
+    <li><a href="#projects" class="hover:text-black transition">Projects</a></li>
+    <li><a href="#contact" class="hover:text-black transition">Contact</a></li>
+  </ul>
+
+  <!-- Hamburger toggle button for mobile -->
+  <button
+    id="menu-toggle"
+    class="md:hidden text-3xl text-black focus:outline-none"
+    onclick="toggleMenu()"
+    aria-label="Toggle menu"
+  >
+    ☰
+  </button>
+
+  <!-- Hamburger menu for mobile -->
+  <ul
+    id="hamburger-menu"
+    class="hidden flex-col space-y-2 absolute top-16 right-6 bg-white border rounded-md shadow-lg p-4 md:hidden"
+  >
+    <li><a href="#about" class="block hover:text-black">About</a></li>
+    <li><a href="#experience" class="block hover:text-black">Experience</a></li>
+    <li><a href="#projects" class="block hover:text-black">Projects</a></li>
+    <li><a href="#contact" class="block hover:text-black">Contact</a></li>
+  </ul>
+</nav>
 
     <!-- Hero Section -->
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/headshot.jpeg" alt="Emily Stewart profile picture" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Emily Stewart</h1>
-        <p class="section__text__p2">Software Engineer</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/resume-example.pdf')"
-          >
-            Download CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://linkedin.com/'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/'"
-          />
-        </div>
-      </div>
-    </section>
+    <section id="profile" class="flex flex-col justify-center md:flex-row items-center md:items-start gap-8 px-6 py-12">
+  <div class="section__pic-container flex-shrink-0">
+    <img
+      src="./assets/headshot.jpeg"
+      alt="Emily Stewart profile picture"
+      class="rounded-full w-40 h-40 object-cover"
+    />
+  </div>
+  <div class="section__text max-w-xl text-center md:text-left">
+    <p class="text-black text-lg font-medium mb-1">Hello, I'm</p>
+    <h1 class="text-4xl font-bold mb-2">Emily Stewart</h1>
+    <p class="text-gray-700 text-xl mb-6">Software Engineer</p>
+
+    <div class="btn-container flex flex-wrap gap-4 mb-6 justify-center md:justify-start">
+      <button
+        class="bg-black text-white py-2 px-6 rounded-md hover:bg-indigo-700 transition"
+        onclick="window.open('./assets/resume-example.pdf')"
+      >
+        Download CV
+      </button>
+      <button
+        class="bg-gray-200 text-gray-800 py-2 px-6 rounded-md hover:bg-gray-300 transition"
+        onclick="location.href='./#contact'"
+      >
+        Contact Info
+      </button>
+    </div>
+
+    <div id="socials-container" class="flex justify-center md:justify-start space-x-6">
+      <img
+        src="./assets/linkedin.png"
+        alt="My LinkedIn profile"
+        class="w-8 h-8 cursor-pointer"
+        onclick="location.href='https://linkedin.com/'"
+      />
+      <img
+        src="./assets/github.png"
+        alt="My Github profile"
+        class="w-8 h-8 cursor-pointer"
+        onclick="location.href='https://github.com/'"
+      />
+    </div>
+  </div>
+</section>
 
     <!-- About Section -->
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-<div class="text-container">
-            <p>
-              After six years as a CIPD Level 3 qualified HR professional - with a focus on people, ED&I, and wellbeing - I've made the decision to pivot into tech and pursue a long-standing interest in software engineering.<br><br>
+    <section id="about" class="py-16 px-6 bg-white text-center">
+      <p class="text-black text-lg font-medium mb-2">Get to Know More</p>
+  <h1 class="text-4xl font-bold mb-8">About Me</h1>
+      <div class="max-w-3xl mx-auto space-y-4 text-gray-700">
+        <p>
+          After six years as a CIPD Level 3 qualified HR professional - with a
+          focus on people, ED&I, and wellbeing - I've made the decision to pivot
+          into tech and pursue a long-standing interest in software
+          engineering.<br /><br />
 
-                My journey into tech isn't entirely new. With an academic background in science and a lifelong interest in computers, design, and data, I've always found myself drawn to <strong>problem-solving through technology</strong>. Even in HR, I gravitated toward systems - becoming the go-to superuser on HR systems, automating workflows, and building tools that made teams more efficient. Over time, I realised what I enjoyed most wasn't just optimising processes—it was the creativity and logic of building things from the ground up.<br><br>
+          My journey into tech isn't entirely new. With an academic background
+          in science and a lifelong interest in computers, design, and data,
+          I've always found myself drawn to
+          <strong>problem-solving through technology</strong>. Even in HR, I
+          gravitated toward systems - becoming the go-to superuser on HR
+          systems, automating workflows, and building tools that made teams more
+          efficient. Over time, I realised what I enjoyed most wasn't just
+          optimising processes—it was the creativity and logic of building
+          things from the ground up.<br /><br />
 
-                In late 2024, <strong>I made the leap</strong>: I left my HR Manager role to fully commit to learning to code. Since then, I've been immersed in e-learning, webinars, and now a full-time coding bootcamp, with a focus on full-stack development.<br><br>
+          In late 2024, <strong>I made the leap</strong>: I left my HR Manager
+          role to fully commit to learning to code. Since then, I've been
+          immersed in e-learning, webinars, and now a full-time coding bootcamp,
+          with a focus on full-stack development.<br /><br />
 
-                My experience in HR gives me a <strong>unique edge</strong>. I understand the importance of communication, collaboration, and leadership - skills that are just as critical in tech. I've also seen firsthand the gap between strong technical talent and people-first thinking, and I believe I can bridge that divide.<br><br>
+          My experience in HR gives me a <strong>unique edge</strong>. I
+          understand the importance of communication, collaboration, and
+          leadership - skills that are just as critical in tech. I've also seen
+          firsthand the gap between strong technical talent and people-first
+          thinking, and I believe I can bridge that divide.<br /><br />
 
-                I'm particularly excited by the potential of tech to create <strong>meaningful, inclusive change</strong>. As someone with ADHD, I know the value of tools that empower people - and I'm driven to build products that do just that.<br><br>
+          I'm particularly excited by the potential of tech to create
+          <strong>meaningful, inclusive change</strong>. As someone with ADHD, I
+          know the value of tools that empower people - and I'm driven to build
+          products that do just that.<br /><br />
 
-                Curious, adaptable, and committed to continuous learning, I'm now looking ahead to opportunities where I can grow as a developer, contribute to mission-driven teams, and continue evolving in this exciting new field.
-            </p>
-          </div>
+          Curious, adaptable, and committed to continuous learning, I'm now
+          looking ahead to opportunities where I can grow as a developer,
+          contribute to mission-driven teams, and continue evolving in this
+          exciting new field.
+        </p>
 
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/headshot.jpeg"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
-
-        
+        <!-- Qualifications + Education Boxes -->
         <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
+          <div
+            class="about-containers flex flex-col md:flex-row md:space-x-8 space-y-6 md:space-y-0"
+          >
+            <div
+              class="details-container flex flex-col items-center text-center md:text-left max-w-xs mx-auto md:mx-0"
+            >
               <img
                 src="./assets/experience.png"
                 alt="Experience icon"
-                class="icon"
+                class="icon w-16 h-16 mb-4"
               />
-              <h3>Qualifications</h3>
-              <p>CIPD Level 3 in People Practice <br />Mental Health First Aider</p>
+              <h3 class="text-xl font-semibold mb-2">Qualifications</h3>
+              <p class="text-gray-700 leading-relaxed">
+                CIPD Level 3 in People Practice <br />Mental Health First Aider
+              </p>
             </div>
-            <div class="details-container">
+            <div
+              class="details-container flex flex-col items-center text-center md:text-left max-w-xs mx-auto md:mx-0"
+            >
               <img
                 src="./assets/education.png"
                 alt="Education icon"
-                class="icon"
+                class="icon w-16 h-16 mb-4"
               />
-              <h3>Education</h3>
-              <p>MSc Bioscience | University of Leeds<br />BSC (Hons) Neuroscience | University of Central Lancashire</p>
+              <h3 class="text-xl font-semibold mb-2">Education</h3>
+              <p class="text-gray-700 leading-relaxed">
+                MSc Bioscience | University of Leeds<br />BSC (Hons)
+                Neuroscience | University of Central Lancashire
+              </p>
             </div>
           </div>
-          
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
     </section>
-    
-    <!-- Experience Section -->
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Skills & Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Languages</h2>
-            <div class="article-container">
-              <article>
+
+    <!-- Skills Section -->
+
+    <section id="skills" class="py-16 px-6 bg-white text-center">
+      <p class="text-black text-lg font-medium mb-2">Explore My</p>
+  <h1 class="text-4xl font-bold mb-8">Skills & Experience</h1>
+
+      <div class="skills-details-container">
+        <div
+          class="about-containers flex flex-col md:flex-row md:space-x-12 space-y-10 md:space-y-0"
+        >
+          <div class="details-container flex-1">
+            <h2 class="skills-sub-title text-2xl font-semibold mb-6">
+              Languages
+            </h2>
+            <div
+              class="article-container grid grid-cols-1 sm:grid-cols-3 gap-6"
+            >
+              <article class="flex flex-col items-center space-y-3">
                 <img
                   src="./assets/html5.svg"
-                  alt="Experience icon"
-                  class="icon"
+                  alt="HTML icon"
+                  class="icon w-16 h-16"
                 />
                 <div>
-                  <h3>HTML</h3>
+                  <h3 class="text-lg font-medium">HTML</h3>
                 </div>
               </article>
-              <article>
+              <article class="flex flex-col items-center space-y-3">
                 <img
                   src="./assets/css3.png"
-                  alt="Experience icon"
-                  class="icon"
+                  alt="CSS icon"
+                  class="icon w-16 h-16"
                 />
                 <div>
-                  <h3>CSS</h3>
+                  <h3 class="text-lg font-medium">CSS</h3>
                 </div>
               </article>
-              
-              <article>
+              <article class="flex flex-col items-center space-y-3">
                 <img
                   src="./assets/javascript.png"
-                  alt="Experience icon"
-                  class="icon"
+                  alt="JavaScript icon"
+                  class="icon w-16 h-16"
                 />
                 <div>
-                  <h3>JavaScript</h3>
+                  <h3 class="text-lg font-medium">JavaScript</h3>
                 </div>
               </article>
-              
-              
             </div>
           </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Frameworks & Libraries</h2>
-            <div class="article-container">
-              <article>
+
+          <div class="details-container flex-1">
+            <h2 class="skills-sub-title text-2xl font-semibold mb-6">
+              Frameworks & Libraries
+            </h2>
+            <div
+              class="article-container grid grid-cols-1 sm:grid-cols-3 gap-6"
+            >
+              <article class="flex flex-col items-center space-y-3">
                 <img
                   src="./assets/nodejs.png"
-                  alt="Experience icon"
-                  class="icon"
+                  alt="Node.js icon"
+                  class="icon w-16 h-16"
                 />
                 <div>
-                  <h3>Node.js</h3>
+                  <h3 class="text-lg font-medium">Node.js</h3>
                 </div>
               </article>
-              <article>
+              <article class="flex flex-col items-center space-y-3">
                 <img
                   src="./assets/tailwind.svg"
-                  alt="Experience icon"
-                  class="icon"
+                  alt="Tailwind CSS icon"
+                  class="icon w-16 h-16"
                 />
                 <div>
-                  <h3>Tailwind CSS</h3>
+                  <h3 class="text-lg font-medium">Tailwind CSS</h3>
                 </div>
               </article>
-              <article>
+              <article class="flex flex-col items-center space-y-3">
                 <img
                   src="./assets/express.png"
-                  alt="Experience icon"
-                  class="icon"
+                  alt="Express.js icon"
+                  class="icon w-16 h-16"
                 />
                 <div>
-                  <h3>Express.js</h3>
+                  <h3 class="text-lg font-medium">Express.js</h3>
                 </div>
               </article>
-              <article>
+              <article class="flex flex-col items-center space-y-3">
                 <img
                   src="./assets/react.svg"
-                  alt="Experience icon"
-                  class="icon"
+                  alt="React icon"
+                  class="icon w-16 h-16"
                 />
                 <div>
-                  <h3>React</h3>
+                  <h3 class="text-lg font-medium">React</h3>
                 </div>
               </article>
-              <article>
+              <article class="flex flex-col items-center space-y-3">
                 <img
                   src="./assets/nextjs.png"
-                  alt="Experience icon"
-                  class="icon"
+                  alt="Next.js icon"
+                  class="icon w-16 h-16"
                 />
                 <div>
-                  <h3>Next.js</h3>
+                  <h3 class="text-lg font-medium">Next.js</h3>
                 </div>
               </article>
             </div>
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
     </section>
-    
+
     <!-- Projects Section -->
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          
-            <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project One</h2>
-            <div class="btn-container">
+    <section id="projects" class="py-16 px-6 bg-gray-100 text-center">
+      <p class="text-black text-lg font-medium mb-2">Browse My Recent</p>
+  <h1 class="text-4xl font-bold mb-8">Projects</h1>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        
+        <!-- Project Card -->
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+          <img
+            src="images/project1.png"
+            alt="Project 1"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2">Project One</h3>
+            <p class="text-gray-600">A brief description of Project One.</p>
+            <div class="btn-container flex space-x-4">
               <button
-                class="btn btn-color-2 project-btn"
+                class="btn bg-black hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded transition-colors duration-300"
                 onclick="location.href='https://github.com/'"
               >
                 Github
               </button>
               <button
-                class="btn btn-color-2 project-btn"
+                class="btn bg-black hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded transition-colors duration-300"
                 onclick="location.href='https://github.com/'"
               >
                 Live Demo
               </button>
             </div>
           </div>
-
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/adventuregame.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Text Adventure Game</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/journeybook.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">JourneyBook</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/emilystewart26/journeybook'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://journeybook.vercel.app/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project One</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/adventuregame.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Text Adventure Game</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/journeybook.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">JourneyBook</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/emilystewart26/journeybook'"
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://journeybook.vercel.app/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
     </section>
-    
+
     <!-- Contact Section -->
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:emilystewart.dev@outlook.com">emilystewart.dev@outlook.com</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/emily-s-68b3a979/">LinkedIn</a></p>
-        </div>
-      </div>
-    </section>
-    
+    <section id="contact" class="py-12 px-6 text-center">
+  <p class="text-black text-lg font-medium mb-2">Get in Touch</p>
+  <h1 class="text-4xl font-bold mb-8">Contact Me</h1>
+  <div class="contact-info-upper-container flex justify-center space-x-12">
+    <div class="contact-info-container flex items-center space-x-4">
+      <img
+        src="./assets/email.png"
+        alt="Email icon"
+        class="w-8 h-8"
+      />
+      <p>
+        <a href="mailto:emilystewart.dev@outlook.com" class="text-blue-600 hover:underline">
+          emilystewart.dev@outlook.com
+        </a>
+      </p>
+    </div>
+    <div class="contact-info-container flex items-center space-x-4">
+      <img
+        src="./assets/linkedin.png"
+        alt="LinkedIn icon"
+        class="w-8 h-8"
+      />
+      <p>
+        <a href="https://www.linkedin.com/in/emily-s-68b3a979/" class="text-blue-600 hover:underline">
+          LinkedIn
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
+
     <!-- Footer -->
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>Copyright &#169; 2025 Emily Stewart. All Rights Reserved.</p>
+    <footer class="text-center py-6 bg-gray-100 text-gray-600">
+      <p>&copy; 2025 Emily Stewart. All rights reserved.</p>
     </footer>
 
-
-
-    <script src="script.js"></script>
+    
   </body>
 </html>
+
+<script src="script.js"></script>
