@@ -6,20 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emily Stewart - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+</style>
   </head>
   
-  <body class="bg-white text-gray-900 font-sans">
+  <body class="bg-white text-black font-poppins">
    
    
-    <nav id="desktop-nav" class="relative flex justify-between items-center px-6 py-4 bg-white shadow-md">
-  <div class="logo text-2xl font-bold text-black cursor-default">
+    <nav id="desktop-nav" class="relative flex justify-between items-center py-10 px-20 bg-white text-2xl">
+  <div class="logo text-4xl text-black cursor-default">
     Emily Stewart
   </div>
 
-  <!-- Desktop nav links -->
-  <ul class="nav-links hidden md:flex space-x-8 text-gray-700 font-medium">
+  <!-- Navbar -->
+  <ul class="nav-links hidden md:flex space-x-8 text-black">
     <li><a href="#about" class="hover:text-black transition">About</a></li>
-    <li><a href="#experience" class="hover:text-black transition">Experience</a></li>
+    <li><a href="#skills" class="hover:text-black transition">Skills</a></li>
     <li><a href="#projects" class="hover:text-black transition">Projects</a></li>
     <li><a href="#contact" class="hover:text-black transition">Contact</a></li>
   </ul>
@@ -34,7 +40,7 @@
     ☰
   </button>
 
-  <!-- Hamburger menu for mobile -->
+  <!-- Hamburger Menu -->
   <ul
     id="hamburger-menu"
     class="hidden flex-col space-y-2 absolute top-16 right-6 bg-white border rounded-md shadow-lg p-4 md:hidden"
@@ -46,36 +52,37 @@
   </ul>
 </nav>
 
-    <!-- Hero Section -->
-    <section id="profile" class="flex flex-col justify-center md:flex-row items-center md:items-start gap-8 px-6 py-12">
+<!-- Hero Section -->
+    <section id="profile" class="flex flex-col justify-center md:flex-row items-center md:items-center gap-8 p-20">
   <div class="section__pic-container flex-shrink-0">
     <img
       src="./assets/headshot.jpeg"
       alt="Emily Stewart profile picture"
-      class="rounded-full w-40 h-40 object-cover"
+      class="rounded-full w-90 h-90 object-cover"
     />
   </div>
-  <div class="section__text max-w-xl text-center md:text-left">
-    <p class="text-black text-lg font-medium mb-1">Hello, I'm</p>
-    <h1 class="text-4xl font-bold mb-2">Emily Stewart</h1>
-    <p class="text-gray-700 text-xl mb-6">Software Engineer</p>
+  <div class="section__text max-w-xl text-center md:text-center">
+    <p class="text-black text-lg font-medium">Hello, I'm</p>
+    <h1 class="text-5xl font-bold m-6">Emily Stewart</h1>
+    <p class="text-gray-700 text-3xl font-bold">Software Engineer</p>
 
-    <div class="btn-container flex flex-wrap gap-4 mb-6 justify-center md:justify-start">
+    <!-- Buttons -->
+    <div class="btn-container flex flex-wrap mb-5 justify-center md:justify-start">
       <button
-        class="bg-black text-white py-2 px-6 rounded-md hover:bg-indigo-700 transition"
+        class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full border border-neutral-200 bg-black px-6 font-medium text-white transition-all duration-100 [box-shadow:5px_5px_rgb(0_0_0)] active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0px_0px_rgb(82_82_82)] m-5"
         onclick="window.open('./assets/resume-example.pdf')"
-      >
-        Download CV
-      </button>
+      >Download CV</button>
+        
       <button
-        class="bg-gray-200 text-gray-800 py-2 px-6 rounded-md hover:bg-gray-300 transition"
-        onclick="location.href='./#contact'"
-      >
+        class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full border border-neutral-200 bg-black px-6 font-medium text-white transition-all duration-100 [box-shadow:5px_5px_rgb(0_0_0)] active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0px_0px_rgb(82_82_82)] m-5" 
+        onclick="location.href='./#contact'" >
         Contact Info
       </button>
     </div>
 
-    <div id="socials-container" class="flex justify-center md:justify-start space-x-6">
+
+    <!-- Socials -->
+    <div id="socials-container" class="flex justify-center md:justify-center space-x-6">
       <img
         src="./assets/linkedin.png"
         alt="My LinkedIn profile"
@@ -92,11 +99,11 @@
   </div>
 </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-16 px-6 bg-white text-center">
+<!-- About Section -->
+    <section id="about" class="py-16 px-6 bg-gray-100 text-center">
       <p class="text-black text-lg font-medium mb-2">Get to Know More</p>
   <h1 class="text-4xl font-bold mb-8">About Me</h1>
-      <div class="max-w-3xl mx-auto space-y-4 text-gray-700">
+      <div class="text-left max-w-7xl mx-auto space-y-4 text-gray-700">
         <p>
           After six years as a CIPD Level 3 qualified HR professional - with a
           focus on people, ED&I, and wellbeing - I've made the decision to pivot
@@ -137,30 +144,23 @@
 
         <!-- Qualifications + Education Boxes -->
         <div class="about-details-container">
-          <div
-            class="about-containers flex flex-col md:flex-row md:space-x-8 space-y-6 md:space-y-0"
-          >
-            <div
-              class="details-container flex flex-col items-center text-center md:text-left max-w-xs mx-auto md:mx-0"
-            >
+          <div class="about-containers flex flex-col md:flex-row md:space-x-8 space-y-6 md:space-y-0 mt-10">
+            <div class="details-container flex flex-col items-center text-center w-1/2 mx-auto md:mx-0 border border-gray-800 rounded-lg p-6">
               <img
                 src="./assets/experience.png"
                 alt="Experience icon"
-                class="icon w-16 h-16 mb-4"
-              />
+                class="icon w-16 h-16 mb-4"/>
               <h3 class="text-xl font-semibold mb-2">Qualifications</h3>
               <p class="text-gray-700 leading-relaxed">
                 CIPD Level 3 in People Practice <br />Mental Health First Aider
               </p>
             </div>
-            <div
-              class="details-container flex flex-col items-center text-center md:text-left max-w-xs mx-auto md:mx-0"
-            >
+            
+            <div class="details-container flex flex-col items-center text-center w-1/2  mx-auto md:mx-0 border border-gray-800 rounded-lg p-6">
               <img
                 src="./assets/education.png"
                 alt="Education icon"
-                class="icon w-16 h-16 mb-4"
-              />
+                class="icon w-16 h-16 mb-4"/>
               <h3 class="text-xl font-semibold mb-2">Education</h3>
               <p class="text-gray-700 leading-relaxed">
                 MSc Bioscience | University of Leeds<br />BSC (Hons)
@@ -179,22 +179,16 @@
   <h1 class="text-4xl font-bold mb-8">Skills & Experience</h1>
 
       <div class="skills-details-container">
-        <div
-          class="about-containers flex flex-col md:flex-row md:space-x-12 space-y-10 md:space-y-0"
-        >
+        <div class="about-containers flex flex-col md:flex-row md:space-x-12 space-y-10 md:space-y-0">
+          
           <div class="details-container flex-1">
-            <h2 class="skills-sub-title text-2xl font-semibold mb-6">
-              Languages
-            </h2>
-            <div
-              class="article-container grid grid-cols-1 sm:grid-cols-3 gap-6"
-            >
+            <h2 class="skills-sub-title text-2xl font-semibold mb-6">Languages</h2>
+            <div class="article-container grid grid-cols-1 sm:grid-cols-3 gap-6">
               <article class="flex flex-col items-center space-y-3">
                 <img
                   src="./assets/html5.svg"
                   alt="HTML icon"
-                  class="icon w-16 h-16"
-                />
+                  class="icon w-16 h-16"/>
                 <div>
                   <h3 class="text-lg font-medium">HTML</h3>
                 </div>
@@ -203,8 +197,7 @@
                 <img
                   src="./assets/css3.png"
                   alt="CSS icon"
-                  class="icon w-16 h-16"
-                />
+                  class="icon w-16 h-16"/>
                 <div>
                   <h3 class="text-lg font-medium">CSS</h3>
                 </div>
@@ -213,8 +206,7 @@
                 <img
                   src="./assets/javascript.png"
                   alt="JavaScript icon"
-                  class="icon w-16 h-16"
-                />
+                  class="icon w-16 h-16"/>
                 <div>
                   <h3 class="text-lg font-medium">JavaScript</h3>
                 </div>
@@ -223,18 +215,13 @@
           </div>
 
           <div class="details-container flex-1">
-            <h2 class="skills-sub-title text-2xl font-semibold mb-6">
-              Frameworks & Libraries
-            </h2>
-            <div
-              class="article-container grid grid-cols-1 sm:grid-cols-3 gap-6"
-            >
+            <h2 class="skills-sub-title text-2xl font-semibold mb-6">Frameworks & Libraries</h2>
+            <div class="article-container grid grid-cols-1 sm:grid-cols-3 gap-6">
               <article class="flex flex-col items-center space-y-3">
                 <img
                   src="./assets/nodejs.png"
                   alt="Node.js icon"
-                  class="icon w-16 h-16"
-                />
+                  class="icon w-16 h-16"/>
                 <div>
                   <h3 class="text-lg font-medium">Node.js</h3>
                 </div>
@@ -243,8 +230,7 @@
                 <img
                   src="./assets/tailwind.svg"
                   alt="Tailwind CSS icon"
-                  class="icon w-16 h-16"
-                />
+                  class="icon w-16 h-16"/>
                 <div>
                   <h3 class="text-lg font-medium">Tailwind CSS</h3>
                 </div>
@@ -253,8 +239,7 @@
                 <img
                   src="./assets/express.png"
                   alt="Express.js icon"
-                  class="icon w-16 h-16"
-                />
+                  class="icon w-16 h-16"/>
                 <div>
                   <h3 class="text-lg font-medium">Express.js</h3>
                 </div>
@@ -263,8 +248,7 @@
                 <img
                   src="./assets/react.svg"
                   alt="React icon"
-                  class="icon w-16 h-16"
-                />
+                  class="icon w-16 h-16"/>
                 <div>
                   <h3 class="text-lg font-medium">React</h3>
                 </div>
@@ -273,14 +257,59 @@
                 <img
                   src="./assets/nextjs.png"
                   alt="Next.js icon"
-                  class="icon w-16 h-16"
-                />
+                  class="icon w-16 h-16"/>
                 <div>
                   <h3 class="text-lg font-medium">Next.js</h3>
                 </div>
               </article>
+              <article class="flex flex-col items-center space-y-3">
+                <img
+                  src="./assets/mongoose.png"
+                  alt="Next.js icon"
+                  class="icon w-16 h-16"/>
+                <div>
+                  <h3 class="text-lg font-medium">Mongoose</h3>
+                </div>
+              </article>
             </div>
           </div>
+
+          <div class="details-container flex-1">
+            <h2 class="skills-sub-title text-2xl font-semibold mb-6">Tools</h2>
+            <div class="article-container grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <article class="flex flex-col items-center space-y-3">
+                <img
+                  src="./assets/vscode.svg"
+                  alt="HTML icon"
+                  class="icon w-16 h-16"/>
+                <div>
+                  <h3 class="text-lg font-medium">VSCode</h3>
+                </div>
+              </article>
+              <article class="flex flex-col items-center space-y-3">
+                <img
+                  src="./assets/mongodb.png"
+                  alt="CSS icon"
+                  class="icon w-16 h-16"/>
+                <div>
+                  <h3 class="text-lg font-medium">MongoDB</h3>
+                </div>
+              </article>
+              <article class="flex flex-col items-center space-y-3">
+                <img
+                  src="./assets/insomnia.png"
+                  alt="JavaScript icon"
+                  class="icon w-16 h-16"/>
+                <div>
+                  <h3 class="text-lg font-medium">Insomnia</h3>
+                </div>
+              </article>
+            </div>
+          </div>
+
+
+
+
         </div>
       </div>
     </section>
@@ -294,29 +323,114 @@
         <!-- Project Card -->
         <div class="bg-white shadow-md rounded-lg overflow-hidden">
           <img
-            src="images/project1.png"
+            src="assets/eventapp.png"
             alt="Project 1"
-            class="w-full h-48 object-cover"
-          />
+            class="w-full h-48 object-cover"/>
           <div class="p-4">
-            <h3 class="text-xl font-semibold mb-2">Project One</h3>
+            <h3 class="text-xl font-semibold mb-2">EventApp</h3>
             <p class="text-gray-600">A brief description of Project One.</p>
-            <div class="btn-container flex space-x-4">
-              <button
-                class="btn bg-black hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded transition-colors duration-300"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn bg-black hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded transition-colors duration-300"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
+            <div class="btn-container flex justify-center space-x-4 mt-5">
+              <button class="btn bg-black hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300"
+                onclick="location.href='https://github.com/'">Github</button>
+              
+              <button class="btn bg-black hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300"
+                onclick="location.href='https://github.com/'">Live Demo</button>
             </div>
           </div>
         </div>
+
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+          <img
+            src="assets/adventuregame.png"
+            alt="Project 1"
+            class="w-full h-48 object-cover"/>
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2">Text Adventure Game</h3>
+            <p class="text-gray-600">A brief description of Project One.</p>
+            <div class="btn-container flex justify-center space-x-4 mt-5">
+              <button class="btn bg-black hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300"
+                onclick="location.href='https://github.com/emilystewart26/adventure-game'">Github</button>
+              
+              <button class="btn bg-black hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300"
+                onclick="location.href='https://emilystewart26.github.io/adventure-game/'">Live Demo</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+          <img
+            src="assets/journeybook.png"
+            alt="Project 1"
+            class="w-full h-48 object-cover"/>
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2">JourneyBook</h3>
+            <p class="text-gray-600">A brief description of Project One.</p>
+            <div class="btn-container flex justify-center space-x-4 mt-5">
+              <button class="btn bg-black hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300"
+                onclick="location.href='https://github.com/emilystewart26/journeybook'">Github</button>
+              
+              <button class="btn bg-black hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300"
+                onclick="location.href='https://journeybook.vercel.app'">Live Demo</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+          <img
+            src="assets/bubbletea.png"
+            alt="Bubble Tea Website"
+            class="w-full h-48 object-cover"/>
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2">Bubble Tea Website</h3>
+            <p class="text-gray-600">A brief description of Project One.</p>
+            <div class="btn-container flex justify-center space-x-4 mt-5">
+              <button class="btn bg-black hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300"
+                onclick="location.href='https://github.com/emilystewart26/Website'">Github</button>
+              
+              <button class="btn bg-black hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300"
+                onclick="location.href='https://emilystewart26.github.io/Website/'">Live Demo</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+          <img
+            src="assets/caesar.png"
+            alt="Caesar's Cipher App"
+            class="w-full h-48 object-cover"/>
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2">Caesar's Cipher</h3>
+            <p class="text-gray-600">A brief description of Project One.</p>
+            <div class="btn-container flex justify-center space-x-4 mt-5">
+              <button class="btn bg-black hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300"
+                onclick="location.href='https://github.com/'">Github</button>
+              
+              <button class="btn bg-black hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300"
+                onclick="location.href='https://github.com/'">Live Demo</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+          <img
+            src="assets/foodapp.png"
+            alt="FoodApp"
+            class="w-full h-48 object-cover"/>
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2">FoodApp</h3>
+            <p class="text-gray-600">A brief description of Project One.</p>
+            <div class="btn-container flex justify-center space-x-4 mt-5">
+              <button class="btn bg-black hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300"
+                onclick="location.href='https://github.com/emilystewart26/food-app-frontend'">Github</button>
+              
+              <button class="btn bg-black hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300"
+                onclick="location.href='https://NEEDS ADDING IN/'">Live Demo</button>
+            </div>
+          </div>
+        </div>
+
+
+
       </div>
     </section>
 
