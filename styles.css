@@ -1,0 +1,36 @@
+/* Font */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* Slider */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.scrolling-wrapper {
+  animation: scroll-left 25s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+.paused {
+  animation-play-state: paused !important;
+}
+
+
+/* Hide scrollbar */
+#card-slider::-webkit-scrollbar {
+  display: none;
+}
+
+#card-slider {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
