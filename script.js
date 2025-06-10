@@ -105,3 +105,16 @@ window.addEventListener('scroll', () => {
   });
 });
 
+//Typewriter effect
+const text = "Emily Stewart";
+  let index = 0;
+
+  function typeWriter() {
+    if (index < text.length) {
+      document.getElementById("typewriter").textContent += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 100);
+    }
+  }
+
+  typeWriter();

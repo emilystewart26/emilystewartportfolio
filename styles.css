@@ -38,3 +38,51 @@ html{
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Navbar hover effects */
+.hover-underline {
+  color:rgb(0, 0, 0);
+  position: relative;
+  display: inline-block;
+}
+
+.hover-underline::after,
+.hover-underline::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #1f1a4c, #e60c76);
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-out;
+}
+
+.hover-underline::before {
+  top: -5px;
+  transform-origin: left;
+}
+
+.hover-underline:hover::after,
+.hover-underline:hover::before {
+  transform: scaleX(1);
+}
+
+/* Typewriter effect */
+#typewriter {
+      display: inline-block;
+    }
+
+.cursor {
+      display: inline-block;
+      width: 10px;
+      background-color: transparent;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
