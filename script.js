@@ -25,14 +25,16 @@ cards.forEach((card) => {
 // Get all heading and subheading elements
 const aboutSubheading = document.getElementById('about-subheading');
 const aboutHeading = document.getElementById('about-heading');
+const employmentSubheading = document.getElementById('employment-subheading');
+const employmentHeading = document.getElementById('employment-heading');
 const skillsSubheading = document.getElementById('skills-subheading');
 const skillsHeading = document.getElementById('skills-heading');
 const projectsSubheading = document.getElementById('projects-subheading');
 const projectsHeading = document.getElementById('projects-heading');
 
 // Create arrays for easier management
-const allSubheadings = [aboutSubheading, skillsSubheading, projectsSubheading];
-const allHeadings = [aboutHeading, skillsHeading, projectsHeading];
+const allSubheadings = [aboutSubheading, employmentSubheading, skillsSubheading, projectsSubheading];
+const allHeadings = [aboutHeading, employmentHeading, skillsHeading, projectsHeading];
 const allElements = [...allSubheadings, ...allHeadings];
 
 // Intersection Observer for fade-in
